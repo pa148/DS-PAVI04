@@ -1,0 +1,17 @@
+Code: Deque1.py
+
+import Collections
+DoubleEnded=collections.deque(["Mon","Tue","Wed"])
+print(DoubleEnded)
+print("Adding to Right")
+DoubleEnded.append("Thu")
+print(DoubleEnded)
+print("Adding to Left")
+DoubleEnded.append("Sun")
+print(DoubleEnded)
+print("Removing from Right")
+DoubleEnded.pop()
+print(DoubleEnded)
+print("Removing from Left")
+DoubleEnded.popleft()
+print(DoubleEnded)
