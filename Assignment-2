@@ -1,0 +1,68 @@
+   def _init_(self):
+               self.head=None
+           
+           def insert_at_start(self,data):
+             if self.head is None:
+                        
+             new_node=Node(data)
+             self.head=new_node
+             print("Node Inserted")
+             return
+   new_node=Node(data)
+new_node.next=self.head
+self.head.prev=new_node
+self.head=new_node
+
+       def insert_at_end(self,data):
+      if self.head is None:
+            new_node=Node(data)
+            self.head=new_node
+            return
+    n=self.head
+    while n.next is not None:
+            n=n.next
+    new_node=Node(data)
+    n.next=new_node
+    new_node.prev=n
+
+    def traverse_list(self):
+          if self.head is not None:
+             print("List has no element")
+          else:
+                n=self.head
+                while n is not None:
+                     print(n.item," ")
+                     n=n.next
+        
+         def delete_at_start(self):
+               if self.head is None:
+                  print("No Element")
+                  return
+              
+              if self.head.next is None:
+           self.head=None
+           return
+         self.head=self.head.next
+         self.head.prev=None
+
+     def delete_at_end(self):
+           if self.head is None:
+                  print("No Element")
+                  return
+      
+           if self.head.next is None:
+              self.head=None
+              return
+          n=self.head
+          while n.next is not None:
+                  n=n.next
+          n.prev.next=None
+
+new=DoublyLinkedList()
+new.traverse_list(50)
+new.insert_at_start(10)
+new.insert_at_start(20)
+new.insert_at_end(30)
+new.insert_at_start(40)           
+new.delete_at_start()
+new.insert_at_end()
